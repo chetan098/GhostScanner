@@ -1,0 +1,8 @@
+lolcat
+nslookup
+whois
+nmap
+whatweb
+gobuster
+subfinder
+gau
