@@ -1,11 +1,5 @@
 #!/bin/bash
-echo " "
 
-
-
-
-
-echo " "
 # Function to display menu
 display_menu() {
     echo "Vulnerability Assessment Tool"
@@ -16,7 +10,7 @@ display_menu() {
     echo "5. Technologies Used By website"
     echo "6. Directory and Endpoint Fuzzing"
     echo "7. Subdomain Finder"
-    echo "8. All Options"
+    echo "8. Run All Options"
     echo "9. Main Menu"
     echo "10. Exit"
 }
@@ -98,17 +92,14 @@ run_all_options() {
     cat "$website_folder"/*.txt > "$website_folder/all.txt"
     echo "All outputs saved to $website_folder/all.txt"
 }
-#main menu option this will return to home
-main_menu(){
- cd .. | pwd | bash Main.sh
-}
+
 # Main script
 ask_for_url
 create_website_folder
 
 while true; do
     display_menu
-    read -p "Enter your choice (1-9): " choice
+    read -p "Enter your choice (1-10): " choice
     case $choice in
         1) dns_information ;;
         2) whois_information ;;
@@ -118,8 +109,17 @@ while true; do
         6) directory_endpoint_fuzzing ;;
         7) subdomain_finder ;;
         8) run_all_options ;;
-        9) main_menu ;;
-        10) echo "Exiting..."; break ;;
-        *) echo "Invalid choice. Please enter a number between 1 and 9." ;;
+        9) 
+            #echo "Returning to Main Menu..."
+             bash Main.sh
+            break ;;
+           
+        10) 
+            echo "Exiting..."
+            break ;;
+        *) 
+            echo "Invalid choice. Please enter a number between 1 and 10." ;;
     esac
 done
+
+
