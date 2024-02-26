@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 cat logo.txt | lolcat -a -s 1090
 # Display the menu
 echo "Menu:"
@@ -18,7 +19,7 @@ case $option in
     2) ./vulnerability.sh ;;
     3) ./report.sh ;;
     4) ./ai_bot.sh ;;
-    5) ./encoder.sh ;;
+    5) bash enco/encoding.sh ;;
     6) ./about_us.sh ;;
     *) echo "Invalid option. Please choose a valid option." ;;
 esac
