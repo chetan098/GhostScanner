@@ -1,5 +1,6 @@
 #!/bin/bash
-
+clear
+cat info/logo.txt | lolcat -a -s 1090
 # Function to display menu
 display_menu() {
     echo "Vulnerability Assessment Tool"
